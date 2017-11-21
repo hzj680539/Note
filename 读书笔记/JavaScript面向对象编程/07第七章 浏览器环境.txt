@@ -1,0 +1,109 @@
+BOM Browser Object Model
+DOM Document Object Model
+JavaScript：ECMAScript，DOM（文档），BOM（浏览器窗口和桌面屏幕）
+window.navigator.userAgent:用户代理
+window.location
+href, hash, host, hostname, pathname, port, protocol, search
+reload(), assign(), replace()
+window.history
+history.forward(), history,back(), history.go(num)
+h5: history.pushState()
+window.frames
+> window.frames === window
+true
+访问子frame元素
+> window.myframe === window.frames[0]
+true
+访问父页面
+> frames[0].parent === window
+true
+top: 访问最顶层的页面
+self:作用与window基本相同
+window.screen
+window.open()/close()
+window.moveTo()/moveBy()
+window.resizeTo()/resizeBy()
+window.alert()/cofirm()/prompt()
+window.setTimeout()/setInterval()
+Core DOM: 能解析XML文档的部分
+HTML DOM: 在Core DOM上扩展的部分
+DOM节点的访问
+节点类型12种，常见：1（元素），2（属性），3（文本）
+documentElement: 用于访问根节点<html>
+子节点：
+childNodes
+hasChildNodes()
+元素之间的空白也是一个节点
+属性：
+attributes
+获取属性
+obj.attributes[0].nodeValue
+obj.attributes['class'].nodeValue
+obj.getAttribute('class')
+访问标签里的内容：
+获取文本内容
+textContext, innerText, innerHTML
+DOM访问的快捷方式
+getElementById, getElementByName, getElementByTagName, getElementByClassName,
+querySelector, querySelectorAll, 》》 通过CSS选择器的方式寻找元素
+获取到的列表中的各项可以用中括号法或者item()方法来进行索引访问。
+兄弟节点，body元素及首尾子节点
+nextSibling, previousSibling
+firstChild, lastChild
+遍历DOM方法的实现
+DOM节点的修改
+修改样式：
+my.style.border = ?
+my.style.fontWeight = ?
+my.style.cssText = ?(CSS样式字符串)
+新建节点：
+createElement, createTextNode
+添加到ＤＯＭ结构：
+appendChild(),insertBefore(),replaceChild()
+复制节点：
+cloneNode(Boolean)
+Boolean, true: 深拷贝，false: 浅拷贝
+移除节点：
+removeChild()
+replaceChild(newNode, oldNode)
+只适用于HTML的ＤＯＭ对象：
+document.body,images,applets,links,anchors,forms
+document.write()
+Cookie,Title,Referrer,Domain
+事件：
+1、内联html属性法 <div onclick="alert('hello')"></div>
+2、元素属性法 element.onclick = function(){}
+3、DOM事件监听器 element.addEventListener("click", function(){}, false)
+捕捉法和冒泡法
+事件捕捉(event capturing)
+单击首先发生在document上，然后依次传递给body，列表，列表项，并最终到达该链接，称为捕捉法。
+事件冒泡(event bubbling)
+单击首先发生在链接上，然后逐层向上冒泡，直至document对象，称为冒泡法。
+事件委托
+阻止事件冒泡：e.stopPropagation()
+防止默认行为：e.preventDefault()
+跨浏览器的事件监听器
+Modern Browser: addEventListener, removeEventListener, target, stopPropagation, preventDefault
+IE-only: attachEvent, detachEvent, srcElement, cancelBubble, returnValue
+不同点：
+addEventListener("click", callback, false)
+attachEvent("onclick", callback)
+XMLHttpRequest对象
+发送请求：
+var xhr = new XMLHttpRequest()
+xhr.onreadystatechange = callback
+xhr.open("GET", "somefile.txt", true)
+xhr.send("")
+处理响应：
+每个XHR对象都有一个readyState属性，该属性值改变，就会触发readystatechange事件
+readyState属性状态值：
+0：未初始化状态
+1：载入请求状态
+2：载入完成状态
+3：请求交互状态
+4：请求完成状态
+AJAX: asynchronous javascript and XML
+
+
+
+

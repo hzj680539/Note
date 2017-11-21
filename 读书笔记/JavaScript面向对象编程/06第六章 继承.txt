@@ -1,0 +1,26 @@
+原型链：隐藏属性 __proto__
+将共享属性迁移到原型中去。
+只继承于原型：所有prototype属性都指向了一个相同的对象，父对象就会收到子对象的影响。
+临时构造器:new F(), 通过这种方法可以保持住原型链
+uber -- 子对象访问父对象的方式
+将继承部分封装成函数
+属性拷贝：循环拷贝父对象属性
+小心处理引用拷贝
+对象之间的继承
+深拷贝
+function deepCopy(p, c) {
+  c = c || {};
+  for (var i in p){
+    if(p.hasOwnProperty(i)){
+      if(typeof p[i] === 'Object'){
+        c[i] = Array.isArray(p[i]) ? [] : {}
+        deepCopy(p[i], c[i]);
+      } else {
+        c[i] = p[i]
+      }
+    }
+  }
+  return c;
+}
+原型继承和属性拷贝的混合应用
+多重继承 arguments

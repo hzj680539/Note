@@ -1,0 +1,55 @@
+一般性数组：也叫索引型数组或者枚举型数据（通常以数字为键名）
+关联型数组：也叫哈希表或者字典（通常以字符串为键值）
+在js中，用对象来表示关联型数组。
+访问对象属性：
+1、中括号表示法，hero['name']
+2、点号表示法，hero.age
+调用对象方法：
+1、hero.func()
+2、hero['func']()
+修改属性与方法：赋值或者delete
+使用this值：
+this：当前对象
+构造器函数：
+优点：在创建对象时接收一些参数。
+全局对象
+构造器属性：创建对象时，也赋予了该对象构造器属性。该属性所引用的是一个函数。
+instanceof操作符：测试一个对象是不是由某个指定的构造器函数所创建。
+返回对象的函数
+传递对象：拷贝或者传递某个函数时，传递的是该对象的引用。在引用上做的任何改动，都会影响它所引用的原对象。
+比较对象：对对象进行比较时，仅当两个引用指向同一个对象时，结果是true。
+内建对象
+数据封装类对象：Object, Array, Boolean, Number, String。
+工具类对象：Math, Date, RegExp。
+错误类对象：。。。
+Object:
+创建对象：var o = {}, var o = new Object()
+o.constructor: 返回构造器函数的引用
+o.toString(): 返回对象的描述字符串，会在某些需要用字符串来表示对象的时候被js内部调用，例如alert。
+o.valueOf(): 返回对象的单值描述信息，通常返回的就是对象本身。
+Array:(数组也是对象)
+创建数组：var a = [], var a = new Array()
+Function:
+创建函数
+1、function sum(a, b){ return a + b; }
+2、var sum = function(a, b){ return a + b; }
+3、var sum = new Function('a', 'b', 'return a + b;')
+函数对象的属性
+1、constructor
+2、length: 记录该函数声明时所决定的函数数量。
+3、prototype
+call()与apply()
+some_obj.someMethod.apply(my_obj, ['a', 'b', 'c'])
+some_obj.someMethod.call(my_obj, 'a', 'b', 'c')
+arguments对象：类数组对象
+RegExp
+创建：
+1、内建构造器，var re = new RegExp("j.*t", "gmi")
+2、正则文本标记法，var re = /j.*t/ig
+属性：
+global(g), ignoreCase(i), multiline(m), lastIndex(开始的索引位)， source(存储正则表达式模式)
+RegExp对象的方法：
+test()
+以正则表达式未参数的字符串方法：
+match(), search(), replace(), split()
+回调式替换!

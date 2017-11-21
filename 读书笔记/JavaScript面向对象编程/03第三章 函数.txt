@@ -1,0 +1,37 @@
+所谓函数，本质上是一种代码的分组形式。
+内建函数：
+parseInt(), parseFloat(), isNaN(), isFinite(),
+encodeURI(), decodeURI, encodeURIComponent(), decodeURIComponent()
+eval()
+URL: Uniform Resource Locator, 统一资源定位符
+URI：Uniform Resource Identifier, 统一资源标识符
+encodeURI() 函数可把字符串作为 URI 进行编码。
+encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。
+eval() 将其输入的字符串当做js代码来执行。
+变量提升（hoisting）：
+js执行过程中进入新的函数时，这个函数内被声明的所有变量都会提升到函数最开始的地方。
+函数也是数据。这种数据有两个特征：1、它们包含的是代码，2、它们是可以执行的。
+匿名函数：var f = function(a){return a;}
+回调函数：函数作为参数传递给其他函数。
+即时函数：
+(
+  function(){alert('hello');}
+)();
+即时函数(传参)：
+(
+  function(name){alert('hello' + name);}
+)('SKT');
+即时函数(另一种写法)：
+
+(
+  function(){alert('hello');}()
+);
+内部（私有）函数
+返回函数的函数
+能重写自己的函数
+闭包
+作用域链
+利用闭包突破作用域链
+getter与setter
+迭代器
+
